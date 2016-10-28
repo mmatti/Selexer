@@ -1,0 +1,62 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Selexer
+		link(href="./css/styles.css",rel="stylesheet")
+	body
+		//	button#subwinbtn Open Sub-Window
+		#frm
+			#ctrl
+				datalist#rng_lst
+					- var n = 0
+					while n <= 5
+						option= n++
+				#pos
+					#noun.sld
+						div.lbl
+							span Nouns
+							span#noun_odds
+						div.rng
+							span 0%
+							input#noun_rng(type="range",value="0",min="0",max="5",list="rng_lst")
+							span 50%
+					#verb.sld
+						div.lbl
+							span Verbs
+							span#verb_odds
+						div.rng
+							span 0%
+							input#verb_rng(type="range",value="0",min="0",max="5",list="rng_lst")
+							span 50%
+					#adjc.sld
+						div.lbl
+							span Adjectives
+							span#adjc_odds
+						div.rng
+							span 0%
+							input#adjc_rng(type="range",value="0",min="0",max="5",list="rng_lst")
+							span 50%
+					#advb.sld
+						div.lbl
+							span Adverbs
+							span#advb_odds
+						div.rng
+							span 0%
+							input#advb_rng(type="range",value="0",min="0",max="5",list="rng_lst")
+							span 50%
+				button#seed_btn Seed Text
+				button#gen_btn Generate
+			#dual
+				div
+					div.lbl
+						span#words.cnt
+						span Input
+					textarea#inp_fld(autofocus)
+				div
+					div.lbl
+						span#chgs.cnt
+						span Output
+					#out_fld
+	script.
+		require('./js/scripts');

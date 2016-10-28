@@ -1,0 +1,142 @@
+body{
+	color:#111;
+	font-family:'Avenir Next',Arial,sans-serif;
+	font-size:0.8rem;
+	margin:0;
+	height:100%;
+}
+#frm {
+	display: flex;
+	flex-direction: column;
+	position:absolute;
+	top:9px;
+	left:9px;
+	right:9px;
+	bottom:9px;
+	#ctrl {
+		flex-basis: 0;
+		#pos{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			#noun{
+				border-color:#8ac;
+				>div.lbl{
+					background-color:#ace;
+				}
+			}
+			#verb{
+				border-color:#ca8;
+				>div.lbl{
+					background-color:#eca;
+				}
+			}
+			#adjc{
+				border-color:#a9b;
+				>div.lbl{
+					background-color:#cbd;
+				}
+			}
+			#advb{
+				border-color:#9ba;
+				>div.lbl{
+					background-color:#bdc;
+				}
+			}
+			div.sld {
+				border: 1px solid #ccc;
+				border-radius: 0.2rem;
+				margin: 0.2rem;
+				width: 12rem;
+				div.lbl {
+					color: #000;
+					background-color: #f6f6f6;
+					font-weight: 600;
+					padding: 0 0.4rem;
+					border-bottom: 1px solid #ccc;
+					border-top-left-radius: inherit;
+					border-top-right-radius: inherit;
+					> span:last-of-type {
+						color: #666;
+						font-weight: normal;
+						padding-left: 0.4rem;
+					}
+				}
+				div.rng {
+					display: flex;
+					align-items: center;
+					> span {
+						display: block;
+						margin: 0 0.2rem;
+						flex-grow: 0;
+					}
+					> input[type=range] {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	#dual {
+		display: flex;
+		flex-direction:row;
+		justify-content: space-between;
+		margin-top:0.5rem;
+		> div {
+			display: flex;
+			flex-direction: column;
+			border: 1px solid #999;
+			border-radius: 0.4rem;
+			> div.lbl {
+				color: #000;
+				background-color: #eee;
+				font-weight: 600;
+				padding: 0 0.4rem;
+				border-bottom: 1px solid #ccc;
+				border-top-left-radius: inherit;
+				border-top-right-radius: inherit;
+				flex-basis: 0;
+				>span.cnt{
+					color:#666;
+					font-weight:normal;
+					float:right;
+				}
+			}
+			#inp_fld, #out_fld {
+				font-family: Georgia, 'Times New Roman', serif;
+				font-size: 0.9rem;
+				padding: 0.4rem;
+				border: none;
+				border-radius: inherit;
+				width: calc(50vw - 30px);
+				height: calc(100vh);
+			}
+			#inp_fld {
+				outline: none;
+				resize: none;
+			}
+			#out_fld {
+				overflow-y:auto;
+				p{
+					margin:0 0 1rem 0;
+				}
+				em {
+					font-style:normal;
+					text-shadow: -1px 1px 0 #fff, 1px 1px 0 #fff;
+					&.noun {
+						box-shadow: inset 0 -1.5px 0 0 #79b;
+					}
+					&.verb {
+						box-shadow: inset 0 -1.5px 0 0 #b97;
+					}
+					&.adjc {
+						box-shadow: inset 0 -1.5px 0 0 #98a;
+					}
+					&.advb {
+						box-shadow: inset 0 -1.5px 0 0 #8a9;
+					}
+				}
+			}
+		}
+	}
+}
